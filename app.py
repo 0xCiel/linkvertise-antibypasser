@@ -21,7 +21,7 @@ verification_status = {}
 
 # generate hash to validate later
 def generate_secure_hash(user_id, timestamp):
-    message = f"{user_id}{timestamp}"
+    message = f"{user_id}{timestamp}{ANTI_BYPASS_TOKEN}"
     return hmac.new(
         SECRET_KEY.encode(),
         message.encode(),
@@ -119,5 +119,4 @@ def api_status(user_id):
     })
 
 if __name__ == '__main__':
-
     app.run(debug=True, port=5000)
