@@ -1,2 +1,1 @@
-# linkvertise-antibypasser
-an anti bypasser for linkvertise written in python
+just an anti bypass for linkvertise written in python
