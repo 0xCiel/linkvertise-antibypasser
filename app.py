@@ -8,8 +8,8 @@ import os
 
 app = Flask(__name__)
 
-USER_ID = 1369407  # Linkvertise ID
-ANTI_BYPASS_TOKEN = "510dc9d22c1d588600a35a8a09cfba9811830faf2bdaaf4ec1b617072ed1f636"  # Anti Bypass Token
+USER_ID = 00000  # Linkvertise ID
+ANTI_BYPASS_TOKEN = ""  # Anti Bypass Token
 
 SECRET_KEY = os.urandom(32).hex()  # generate random key for HMAC or u can put your own static key here
 client = LinkvertiseClient(
@@ -119,4 +119,5 @@ def api_status(user_id):
     })
 
 if __name__ == '__main__':
+
     app.run(debug=True, port=5000)
