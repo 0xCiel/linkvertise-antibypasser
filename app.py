@@ -33,6 +33,7 @@ def verify_secure_hash(user_id, timestamp, provided_hash):
     expected_hash = generate_secure_hash(user_id, timestamp)
     return hmac.compare_digest(expected_hash, provided_hash)
 
+# some bypassers like bypass.vip doesnt add referral header so if you just check if theres no referral then you get block
 def check_referral_header():
     referrer = request.headers.get('Referer')
     
@@ -120,3 +121,4 @@ def api_status(user_id):
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
